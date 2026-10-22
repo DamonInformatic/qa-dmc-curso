@@ -12,8 +12,8 @@ export type Pedido = {
 };
 
 export function porcentajeDescuento(p: Pedido): number {
-  if (p.cantidad < 1 || p.cantidad > 99) {
-    throw new Error('Cantidad fuera de rango (1 a 99)');
+  if (p.cantidad < 1 || p.cantidad >= 99) {
+    throw new Error('La cantidad por pedido debe estar entre 1 y 99 unidades');
   }
   let porcentaje = 0;
   if (p.cantidad >= 25) porcentaje += 15;
