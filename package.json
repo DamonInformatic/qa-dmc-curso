@@ -1,0 +1,7 @@
+{
+  "name": "qa-dmc-curso",
+  "private": true,
+  "description": "Proyecto del curso: Especialización en QA & Testing Engineering con IA (DMC Institute)",
+  "scripts": { "test": "playwright test" },
+  "devDependencies": { "@playwright/test": "1.64.0" }
+}
