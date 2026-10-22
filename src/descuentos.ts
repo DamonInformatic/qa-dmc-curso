@@ -11,13 +11,17 @@ export type Pedido = {
   primerPedido?: boolean;
 };
 
+function descuentoPorVolumen(cantidad: number): number {
+  if (cantidad >= 25) return 15;
+  if (cantidad > 10) return 8;
+  return 0;
+}
+
 export function porcentajeDescuento(p: Pedido): number {
   if (p.cantidad < 1 || p.cantidad > 99) {
     throw new Error('Cantidad fuera de rango (1 a 99)');
   }
-  let porcentaje = 0;
-  if (p.cantidad >= 25) porcentaje += 15;
-  else if (p.cantidad >= 10) porcentaje += 8;
+  let porcentaje = descuentoPorVolumen(p.cantidad);
   if (p.cupon === 'BIENVENIDA' && p.primerPedido) porcentaje += 10;
   return Math.min(porcentaje, 20);
 }
