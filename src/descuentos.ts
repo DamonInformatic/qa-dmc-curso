@@ -19,7 +19,10 @@ export function porcentajeDescuento(p: Pedido): number {
   if (p.cantidad >= 25) porcentaje += 15;
   else if (p.cantidad >= 10) porcentaje += 8;
   if (p.cupon === 'BIENVENIDA' && p.primerPedido) porcentaje += 10;
-  return Math.min(porcentaje, 20);
+  const conTope = Math.min(porcentaje, 20);
+  // Nuevo: cupón VERANO, 10 % para cualquier pedido.
+  if (p.cupon === 'VERANO') return conTope + 10;
+  return conTope;
 }
 
 export function calcularTotal(p: Pedido): number {
