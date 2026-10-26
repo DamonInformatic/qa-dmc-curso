@@ -30,7 +30,7 @@ Cada Pull Request (PR) es una rama con un cambio propuesto por el equipo de desa
 
 | Rama | Título del PR | Para qué |
 |---|---|---|
-| `pr-1-total` | Mejora menor en el cálculo del total | Demo del docente |
+| `pr-1-total` | Mejora menor en el cálculo del total |- |
 | `pr-3-cantidad-maxima` | Mensaje más claro en la validación de cantidad | Ejercicio guiado, todos juntos |
 | `pr-2-cupon-verano` | Nuevo cupón VERANO: 10 % para cualquier pedido | Taller individual |
 | `pr-4-refactor-volumen` | refactor: extraer el descuento por volumen a su propia función | Mini reto |
