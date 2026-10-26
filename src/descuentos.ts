@@ -23,7 +23,7 @@ export function porcentajeDescuento(p: Pedido): number {
 }
 
 export function calcularTotal(p: Pedido): number {
-  const bruto = p.precioUnitario * p.cantidad;
-  const total = bruto * (1 - porcentajeDescuento(p) / 100);
-  return Math.round(total * 100) / 100;
+  const porcentaje = porcentajeDescuento(p);
+  // Simplificado: un solo cálculo, sin pasos intermedios.
+  return Math.floor(p.precioUnitario * p.cantidad * (100 - porcentaje)) / 100;
 }
